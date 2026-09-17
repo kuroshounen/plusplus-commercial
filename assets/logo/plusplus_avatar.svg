@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" fill="none">
+  <defs>
+    <radialGradient id="av_bg" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="70%" stop-color="#F8FAFC" />
+      <stop offset="100%" stop-color="#EEF2F6" />
+    </radialGradient>
+    <linearGradient id="av_terra" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E26B39" />
+      <stop offset="100%" stop-color="#B95026" />
+    </linearGradient>
+    <linearGradient id="av_navy" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+    <filter id="av_shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="20" flood-color="#0F172A" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="512" height="512" fill="url(#av_bg)"/>
+  
+  <!-- Architectural Subtle Grid -->
+  <path d="M0 128h512M0 256h512M0 384h512M128 0v512M256 0v512M384 0v512" stroke="#E2E8F0" stroke-width="1" opacity="0.6" stroke-dasharray="4 4"/>
+
+  <!-- Center Card Emblem -->
+  <rect x="86" y="86" width="340" height="340" rx="64" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2" filter="url(#av_shadow)"/>
+  
+  <!-- Double Plus Iconography -->
+  <g transform="translate(86, 75)">
+    <!-- First Plus (Navy / Marketing & Systems) -->
+    <rect x="95" y="135" width="32" height="110" rx="16" fill="url(#av_navy)" />
+    <rect x="56" y="174" width="110" height="32" rx="16" fill="url(#av_navy)" />
+
+    <!-- Second Plus (Terracotta / Sales & Growth) -->
+    <rect x="215" y="75" width="32" height="110" rx="16" fill="url(#av_terra)" />
+    <rect x="176" y="114" width="110" height="32" rx="16" fill="url(#av_terra)" />
+
+    <!-- Focal Center Node -->
+    <circle cx="170" cy="174" r="12" fill="#C25E34" />
+  </g>
+
+  <!-- Bottom Brand Text Inside Card -->
+  <text x="256" y="375" text-anchor="middle" font-family="'Plus Jakarta Sans', 'Manrope', -apple-system, sans-serif" font-size="34" font-weight="800" fill="#0F172A" letter-spacing="-0.5">Plus<tspan fill="#C25E34">Plus</tspan></text>
+  <text x="256" y="398" text-anchor="middle" font-family="'Plus Jakarta Sans', 'Manrope', -apple-system, sans-serif" font-size="11" font-weight="700" fill="#64748B" letter-spacing="3.5">COMMERCIAL ARCHITECTURE</text>
+</svg>

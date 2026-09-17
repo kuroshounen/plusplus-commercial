@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>PlusPlus Commercial | Единый коммерческий контур</title>
+  <meta name="description" content="Бюро коммерческой архитектуры Сергея Денежкина и Мурада Ялиева. Построение отделов продаж и performance-маркетинга под ключ.">
+  
+  <link rel="icon" type="image/svg+xml" href="assets/logo/plusplus_favicon.svg">
+  
+  <!-- Preconnect & Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Ambient Architectural Grid & Glow -->
+  <div class="ambient-bg" aria-hidden="true">
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+  </div>
+  <div class="grid-overlay" aria-hidden="true"></div>
+
+  <!-- Topbar Header -->
+  <header class="brand-topbar">
+    <a href="#" class="logo-wrap" aria-label="PlusPlus Commercial">
+      <img src="assets/logo/plusplus_logo_horizontal.svg" alt="PlusPlus Commercial Logo" class="logo-svg">
+    </a>
+
+    <div class="topbar-actions">
+      <button class="topbar-btn" id="drawerBtn" aria-label="Открыть оглавление">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <span>Все слайды (12)</span>
+      </button>
+      <a href="#slide-12" class="topbar-btn primary" data-jump="contact">+ Экспресс-диагностика</a>
+    </div>
+  </header>
+
+  <!-- Progress Bar -->
+  <div class="progress-bar-wrap" aria-hidden="true">
+    <div class="progress-bar-fill" id="progressBar"></div>
+  </div>
+
+  <!-- Bottom Floating Navigation -->
+  <nav class="bottom-controls" aria-label="Навигация по слайдам">
+    <button class="nav-btn" id="prevBtn" aria-label="Предыдущий слайд">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <div class="slide-counter" aria-live="polite">
+      <span class="current">01</span> / <span class="total">12</span>
+    </div>
+    <button class="nav-btn" id="nextBtn" aria-label="Следующий слайд">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+    <div class="keyboard-hint" aria-hidden="true">
+      <span>[←]</span>
+      <span>[→]</span>
+    </div>
+  </nav>
+
+  <!-- Slide Drawer (Modal Index) -->
+  <div class="drawer-overlay" id="drawerOverlay" aria-hidden="true">
+    <aside class="slide-drawer" role="dialog" aria-label="Оглавление презентации">
+      <div class="drawer-header">
+        <div class="flex items-center gap-2 font-head font-bold text-sm">
+          <span class="text-accent font-mono font-bold">+</span>
+          <span>Оглавление презентации</span>
+        </div>
+        <button class="drawer-close-btn" id="drawerCloseBtn" aria-label="Закрыть меню">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="drawer-list">
+        <button class="drawer-item active" data-target-slide="0"><span class="drawer-num">01</span><span class="drawer-title">Титульный экран</span></button>
+        <button class="drawer-item" data-target-slide="1"><span class="drawer-num">02</span><span class="drawer-title">Знакомая ситуация? (Боли)</span></button>
+        <button class="drawer-item" data-target-slide="2"><span class="drawer-num">03</span><span class="drawer-title">Проблема точечных решений</span></button>
+        <button class="drawer-item" data-target-slide="3"><span class="drawer-num">04</span><span class="drawer-title">Единый коммерческий контур</span></button>
+        <button class="drawer-item" data-target-slide="4"><span class="drawer-num">05</span><span class="drawer-title">Лица проекта и экспертиза</span></button>
+        <button class="drawer-item" data-target-slide="5"><span class="drawer-num">06</span><span class="drawer-title">Доказательства в цифрах (Кейсы)</span></button>
+        <button class="drawer-item" data-target-slide="6"><span class="drawer-num">07</span><span class="drawer-title">Наш идеальный клиент</span></button>
+        <button class="drawer-item" data-target-slide="7"><span class="drawer-num">08</span><span class="drawer-title">С кем мы точно НЕ работаем</span></button>
+        <button class="drawer-item" data-target-slide="8"><span class="drawer-num">09</span><span class="drawer-title">Дорожная карта (3 месяца)</span></button>
+        <button class="drawer-item" data-target-slide="9"><span class="drawer-num">10</span><span class="drawer-title">Что останется у вас (Артефакты)</span></button>
+        <button class="drawer-item" data-target-slide="10"><span class="drawer-num">11</span><span class="drawer-title">Инвестиции в рост (Тарифы)</span></button>
+        <button class="drawer-item" data-target-slide="11"><span class="drawer-num">12</span><span class="drawer-title">Следующий шаг (Диагностика)</span></button>
+      </div>
+    </aside>
+  </div>
+
+  <!-- ========================================= -->
+  <!-- 📽️ 12 СЛАЙДОВ ПРЕЗЕНТАЦИИ                -->
+  <!-- ========================================= -->
+  <main id="slider">
+
+    <!-- СЛАЙД 1: Главный экран (Титульный) -->
+    <section class="slide active" id="slide-1" aria-labelledby="slide1-heading">
+      <!-- Interactive Commercial Circuit Canvas -->
+      <canvas id="circuitCanvas" class="hero-canvas" aria-hidden="true"></canvas>
+
+      <div class="container center" style="position: relative; z-index: 2;">
+        <div class="badge accent animate-up">
+          <span class="pulse-dot"></span> Сергей Денежкин &amp; Мурад Ялиев
+        </div>
+
+        <h1 id="slide1-heading" class="animate-up" style="transition-delay: 0.1s;">
+          Единый коммерческий контур
+        </h1>
+
+        <p class="subtitle max-w center animate-up" style="transition-delay: 0.2s;">
+          Строим коммерческие отделы «под ключ». Синхронизируем маркетинг и продажи для системного и управляемого роста вашей выручки.
+        </p>
+
+        <!-- Brand Formula -->
+        <div class="hero-formula animate-up" style="transition-delay: 0.3s;">
+          <div class="formula-part">
+            <span class="formula-plus">(+)</span> Человечность
+          </div>
+          <span class="formula-plus">+</span>
+          <div class="formula-part">
+            <span class="formula-plus">(+)</span> Оцифрованная прибыль
+          </div>
+          <span class="formula-plus">=</span>
+          <div class="formula-result">
+            Стабильный рост бизнеса
+          </div>
+        </div>
+
+        <div class="hero-actions animate-up" style="transition-delay: 0.4s;">
+          <button class="pp-btn pp-btn-primary" id="startBtn">
+            Изучить презентацию ➔
+          </button>
+          <a href="#slide-12" class="pp-btn pp-btn-secondary" data-jump="contact">
+            Записаться на Zoom-разбор
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- СЛАЙД 2: Знакомая ситуация? (Боли собственника) -->
+    <section class="slide" id="slide-2" aria-labelledby="slide2-heading">
+      <div class="container">
+        <div class="center">
+          <div class="badge danger animate-up">Реальность собственника</div>
+          <h2 id="slide2-heading" class="animate-up" style="transition-delay: 0.1s;">
+            С какими мыслями к нам обычно приходят
+          </h2>
+          <p class="subtitle center animate-up" style="transition-delay: 0.15s;">
+            5 типичных кризисных ситуаций в малом и среднем бизнесе, которые сжигают маржинальность:
+          </p>
+        </div>
+
+        <div class="pain-quotes-grid animate-up" style="transition-delay: 0.25s;">
+          <!-- Quote 1 -->
+          <div class="quote-card critical">
+            <div class="quote-tag"><span class="text-accent font-mono font-bold">+</span> Трафик и простой команды</div>
+            <p class="quote-text">«Товар есть, а клиентов нет. Все ждут работы, но лидов нет, боюсь, что команда скоро разбежится».</p>
+          </div>
+
+          <!-- Quote 2 -->
+          <div class="quote-card">
+            <div class="quote-tag"><span class="text-accent font-mono font-bold">+</span> Неопределенность горизонта</div>
+            <p class="quote-text">«Боюсь будущего — не представляю, что будет в России через 3 месяца и через год».</p>
+          </div>
+
+          <!-- Quote 3 -->
+          <div class="quote-card critical">
+            <div class="quote-tag"><span class="text-accent font-mono font-bold">+</span> Ловушка операционки</div>
+            <p class="quote-text">«Не хватает рук и времени на маркетинг, я как собственник всё время тушу пожары в операционке».</p>
+          </div>
+
+          <!-- Quote 4 -->
+          <div class="quote-card">
+            <div class="quote-tag"><span class="text-accent font-mono font-bold">+</span> Кадровый голод</div>
+            <p class="quote-text">«Найм — самое трудное. В условиях кадрового голода приходят дилетанты, никто не хочет брать на себя ответственность».</p>
+          </div>
+
+          <!-- Quote 5 -->
+          <div class="quote-card" style="grid-column: span 2;">
+            <div class="quote-tag"><span class="text-accent font-mono font-bold">+</span> Стеклянный потолок ресурсов</div>
+            <p class="quote-text">«Мы пробили потолок, видим, что можем забрать больший кусок рынка, но с нынешними ресурсами просто не потянем».</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- СЛАЙД 3: Почему классический подход даёт сбой -->
+    <section class="slide" id="slide-3" aria-labelledby="slide3-heading">
+      <div class="container">
+        <div class="center">
+          <div class="badge danger animate-up">Системная ошибка</div>
+          <h2 id="slide3-heading" class="animate-up" style="transition-delay: 0.1s;">
+            Проблема точечных решений
+          </h2>
+          <p class="subtitle center animate-up" style="transition-delay: 0.15s;">
+            Наём одного РОПа или штатного маркетолога решает только узкие, локальные задачи.
+          </p>
+        </div>
+
+        <div class="conflict-split animate-up" style="transition-delay: 0.25s;">
+          <div class="conflict-box">
+            <div class="flex items-center gap-2 font-head font-bold text-sm text-muted mb-2">
+              <span class="text-accent">●</span> Позиция штатного маркетолога:
+            </div>
+            <p class="font-head text-lg font-bold text-[#0F172A]">«Лиды идут, клики дешевые, план выполнен!»</p>
+            <p class="text-sm text-secondary mt-2">Маркетологи всегда винят продажи в сливе лидов, не желая разбираться в квалификации заявок и конверсии в оплаты.</p>
+          </div>
+
+          <div class="conflict-vs" aria-hidden="true">VS</div>
+
+          <div class="conflict-box">
+            <div class="flex items-center gap-2 font-head font-bold text-sm text-muted mb-2">
+              <span class="text-danger">●</span> Позиция менеджеров продаж:
+            </div>
+            <p class="font-head text-lg font-bold text-[#0F172A]">«Трафик — нецелевой мусор, спам и зеваки!»</p>
+            <p class="text-sm text-secondary mt-2">Продажи винят маркетинг в нецелевом трафике и бросают лиды после первого безответного звонка, сливая рекламный бюджет.</p>
+          </div>
+        </div>
+
+        <div class="conflict-result-banner animate-up" style="transition-delay: 0.35s;">
+          <div style="font-size: 28px;">💡</div>
+          <div>
+            <div class="font-head font-bold text-base text-[#0F172A]">Вывод для собственника:</div>
+            <p class="text-sm text-secondary mt-0.5">
+              Для системного роста нужен <strong>комплексный взгляд, большая насмотренность и глубокое вовлечение</strong>. Нужна команда, которая берет на себя ответственность за конечный результат — чистую прибыль в кассе компании.
+            </p>
+          </div>
+        </div>
+
+        <!-- Interactive Loss Calculator Widget -->
+        <div class="pp-card animate-up" style="margin-top: 1.5rem; transition-delay: 0.45s; background: #FFFFFF;">
+          <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+            <div>
+              <span class="text-xs font-bold font-mono text-accent uppercase tracking-wider">Интерактивный калькулятор потерь</span>
+              <div class="font-head font-bold text-base text-[#0F172A]">Сколько ваш бизнес теряет на рассинхроне?</div>
+              <div class="text-xs text-muted">Передвиньте ползунок вашего примерного оборота в месяц:</div>
+            </div>
+            <div class="flex items-center gap-4 w-full md:w-auto">
+              <input type="range" id="revenueSlider" min="2" max="60" value="10" step="1" style="accent-color: var(--pp-accent); cursor: pointer; width: 160px;">
+              <span id="revenueValDisplay" class="font-head font-extrabold text-lg text-accent font-mono" style="min-width: 95px;">10 млн ₽</span>
+            </div>
+            <div class="p-2.5 rounded-xl bg-[#FEF2F2] border border-[#FECACA] text-right">
+              <div class="text-[11px] uppercase font-bold text-danger">Скрытые потери выручки:</div>
+              <div id="wastedBudgetDisplay" class="font-head font-bold text-sm text-[#991B1B]">1.5 – 2.8 млн ₽ / год</div>
+              <div id="lostDealsDisplay" class="text-[10px] text-muted">от 18 сделок</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- СЛАЙД 4: Наше решение -->
+    <section class="slide" id="slide-4" aria-labelledby="slide4-heading">
+      <div class="container center">
+        <div class="badge accent animate-up">Решение PlusPlus</div>
+        <h2 id="slide4-heading" class="animate-up" style="transition-delay: 0.1s;">
+          Внедрение Единого коммерческого контура
+        </h2>
+        <p class="subtitle max-w center animate-up" style="transition-delay: 0.15s;">
+          Мы объединяем привлечение клиентов (маркетинг) и их закрытие в сделки (продажи) в единую прозрачную систему. Вы получаете полную оцифровку пути клиента, предсказуемую лидогенерацию и команду, которая знает, как продавать ваш продукт.
+        </p>
+
+        <!-- Pipeline Diagram -->
+        <div class="circuit-pipeline animate-up" style="transition-delay: 0.25s;">
+          <div class="pipeline-step">
+            <div class="pipeline-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24"/><path d="m14.83 9.17 4.24-4.24"/><path d="m14.83 14.83 4.24 4.24"/><path d="m9.17 14.83-4.24 4.24"/></svg>
+            </div>
+            <div class="text-xs uppercase font-bold text-accent font-mono">Этап 1</div>
+            <h4 class="mt-1">Привлечение</h4>
+            <div class="text-xs font-semibold text-muted">Маркетинг &amp; Трафик</div>
+            <p class="text-xs text-secondary mt-2">Оцифрованные кампании, точечный таргетинг, контекст, отсечение спама на входе.</p>
+          </div>
+
+          <div class="pipeline-arrow" aria-hidden="true">➔</div>
+
+          <div class="pipeline-step center-node">
+            <div class="pipeline-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+            </div>
+            <div class="text-xs uppercase font-bold text-accent font-mono">Связка</div>
+            <h4 class="mt-1">Синхронизация</h4>
+            <div class="text-xs font-semibold text-accent">Единая сквозная CRM</div>
+            <p class="text-xs text-secondary mt-2">Регламенты квалификации, скоринг лидов, трекинг когорт и юнит-экономика.</p>
+          </div>
+
+          <div class="pipeline-arrow" aria-hidden="true">➔</div>
+
+          <div class="pipeline-step">
+            <div class="pipeline-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div class="text-xs uppercase font-bold text-accent font-mono">Этап 2</div>
+            <h4 class="mt-1">Закрытие</h4>
+            <div class="text-xs font-semibold text-muted">Системные продажи</div>
+            <p class="text-xs text-secondary mt-2">Обученные менеджеры, скрипты, жесткая дисциплина ведения базы и рост LTV.</p>
+          </div>
+        </div>
+
+        <div class="badge navy animate-up" style="font-size: 13px; text-transform: none; letter-spacing: 0; padding: 8px 20px; transition-delay: 0.35s;">
+          «От первого клика по рекламе — до реальных денег на расчётном счёте»
+        </div>
+      </div>
+    </section>
+
+    <!-- СЛАЙД 5: Кто мы (Экспертиза основателей) -->
+    <section class="slide" id="slide-5" aria-labelledby="slide5-heading">
+      <div class="container">
+        <div class="center">
+          <div class="badge accent animate-up">Основатели бюро</div>
+          <h2 id="slide5-heading" class="animate-up" style="transition-delay: 0.1s;">
+            Лица проекта и наша экспертиза
+          </h2>
+          <p class="subtitle center animate-up" style="transition-delay: 0.15s;">
+            Мы заходим в проект лично руками и несем персональную репутационную ответственность.
+          </p>
+        </div>
+
+        <div class="grid-2 animate-up" style="transition-delay: 0.25s;">
+          <!-- Сергей Денежкин -->
+          <div class="profile-card">
+            <div class="profile-head">
+              <div class="profile-avatar-wrap">
+                <img src="assets/Sergey_Denezhkin.jpg" alt="Сергей Денежкин" class="profile-avatar-img">
+              </div>
+              <div class="profile-meta">
+                <h3>Сергей Денежкин</h3>
+                <div class="role">Руководитель коммерческих направлений, HRBP</div>
+              </div>
+            </div>
+
+            <div class="profile-stat-badge">
+              <div>
+                <div class="profile-stat-val" data-count="250" data-suffix="М+ ₽">0</div>
+                <div class="profile-stat-label">Выручка ОП в девелопменте</div>
+              </div>
+              <div class="badge success" style="margin-bottom: 0;">С нуля под ключ</div>
+            </div>
+
+            <ul class="feature-check-list">
+              <li><span class="bullet">+</span> Построение отделов продаж с нуля и стратегическое управление коммерцией.</li>
+              <li><span class="bullet">+</span> Найм, обучение, регламентация и адаптация сильных команд.</li>
+              <li><span class="bullet">+</span> Успешный предпринимательский опыт: основатель агентства недвижимости (закрыто &gt;100 сделок).</li>
+              <li><span class="bullet">+</span> Фокус на финансовом управлении, юнит-экономике и людях.</li>
+            </ul>
+          </div>
+
+          <!-- Мурад Ялиев -->
+          <div class="profile-card">
+            <div class="profile-head">
+              <div class="profile-avatar-wrap">
+                <img src="assets/Murad_Yaliev.jpg" alt="Мурад Ялиев" class="profile-avatar-img">
+              </div>
+              <div class="profile-meta">
+                <h3>Мурад Ялиев</h3>
+                <div class="role">CMO, Перформанс-маркетолог</div>
+              </div>
+            </div>
+
+            <div class="profile-stat-badge">
+              <div>
+                <div class="profile-stat-val" data-count="7" data-prefix="> " data-suffix=" лет">0</div>
+                <div class="profile-stat-label">В Performance-маркетинге</div>
+              </div>
+              <div class="badge accent" style="margin-bottom: 0;">Топ-1000 стартапов РФ</div>
+            </div>
+
+            <ul class="feature-check-list">
+              <li><span class="bullet">+</span> Более 7 лет опыта в интернет-маркетинге (от B2C ритейла до сложных B2B IT-стартапов).</li>
+              <li><span class="bullet">+</span> Полная цифровизация воронок и построение предсказуемой системы лидогенерации.</li>
+              <li><span class="bullet">+</span> Глубокая сквозная аналитика, медиапланирование и Performance-подход.</li>
+              <li><span class="bullet">+</span> Сооснователь IT-стартапа (ТОП-1000 университетских стартапов РФ, грант ФСИ).</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- СЛАЙД 6: Доказательства в цифрах (Кейсы) -->
+    <section class="slide" id="slide-6" aria-labelledby="slide6-heading">
+      <div class="container">
+        <div class="center">
+          <div class="badge success animate-up">Твердые цифры</div>
+          <h2 id="slide6-heading" class="animate-up" style="transition-delay: 0.1s;">
+            Наши кейсы
+          </h2>
+          <p class="subtitle center animate-up" style="transition-delay: 0.15s;">
+            Оцифрованные результаты внедрения системы в различных отраслях:
+          </p>
+        </div>
+
+        <div class="grid-4 animate-up" style="transition-delay: 0.25s;">
+          <!-- Case 1 -->
+          <div class="case-card">
+            <div>
+              <span class="badge" style="font-size: 11px; padding: 4px 10px; margin-bottom: 8px;">Недвижимость СПБ</span>
+              <div class="case-metric" data-count="100" data-prefix="> ">0</div>
+              <div class="case-title">Агентство недвижимости</div>
+            </div>
+            <p class="case-desc">Успешно закрыто более 100 сделок на рынке новостроек и вторички. Сотни агентов обучены техникам эффективных продаж и ведению клиентов.</p>
+          </div>
+
+          <!-- Case 2 -->
+          <div class="case-card">
+            <div>
+              <span class="badge accent" style="font-size: 11px; padding: 4px 10px; margin-bottom: 8px;">B2B / B2C Ритейл</span>
+              <div class="case-metric" data-count="28" data-prefix="+" data-suffix="%">0</div>
+              <div class="case-title">Плёночная</div>
+            </div>
+            <p class="case-desc">Оцифрована воронка B2B, внедрён Битрикс24. Средний чек (AOV) увеличен на 28%. Настроена стабильная лидогенерация независимо от маркетолога.</p>
+          </div>
+
+          <!-- Case 3 -->
+          <div class="case-card">
+            <div>
+              <span class="badge success" style="font-size: 11px; padding: 4px 10px; margin-bottom: 8px;">Производство</span>
+              <div class="case-metric" data-count="40" data-prefix="+" data-suffix="%">0</div>
+              <div class="case-title">Фабрика «Ниагара»</div>
+            </div>
+            <p class="case-desc">При минимальном рекламном бюджете выручка фабрики увеличена на 40%. Внедрён точный сквозной расчет юнит-экономики и рентабельности.</p>
+          </div>
+
+          <!-- Case 4 -->
+          <div class="case-card">
+            <div>
+              <span class="badge navy" style="font-size: 11px; padding: 4px 10px; margin-bottom: 8px;">IT &amp; SaaS</span>
+              <div class="case-metric" data-count="120" data-prefix="> " data-suffix="%">0</div>
+              <div class="case-title">Профиланс Групп</div>
+            </div>
+            <p class="case-desc">Разработка Go-To-Market стратегии и запуск 2-х IT-продуктов с перевыполнением оптимистичного плана продаж в условиях жесткой конкуренции.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- СЛАЙД 7: С кем мы достигаем лучших результатов -->
+    <section class="slide" id="slide-7" aria-labelledby="slide7-heading">
+      <div class="container">
+        <div class="center">
+          <div class="badge accent animate-up">Профиль партнерства</div>
+          <h2 id="slide7-heading" class="animate-up" style="transition-delay: 0.1s;">
+            Наш идеальный клиент
+          </h2>
+          <p class="subtitle center animate-up" style="transition-delay: 0.15s;">
+            Мы работаем с системным, амбициозным бизнесом, который готов к прозрачному масштабированию.
+          </p>
+        </div>
+
+        <div class="grid-2 animate-up" style="transition-delay: 0.25s;">
+          <!-- Column 1: Qualities -->
+          <div class="client-box">
+            <h3 class="flex items-center gap-2">
+              <span class="text-success">✓</span> Качества нашего клиента:
+            </h3>
+            
+            <div class="client-item">
+              <div class="client-item-icon">1</div>
+              <div>
+                <strong class="text-[#0F172A]">Сильный продукт:</strong>
+                <p class="text-sm text-secondary mt-1">Есть классный продукт, за который не стыдно перед рынком, но не хватает мощного системного рычага продаж.</p>
+              </div>
+            </div>
+
+            <div class="client-item">
+              <div class="client-item-icon">2</div>
+              <div>
+                <strong class="text-[#0F172A]">Зрелость собственника:</strong>
+                <p class="text-sm text-secondary mt-1">Собственник осознает ценность сильной команды и готов инвестировать в систему, а не бесконечно «тушить пожары» в операционке.</p>
+              </div>
+            </div>
+
+            <div class="client-item">
+              <div class="client-item-icon">3</div>
+              <div>
+                <strong class="text-[#0F172A]">Готовность к оцифровке:</strong>
+                <p class="text-sm text-secondary mt-1">Бизнес готов к изменениям, дисциплине регламентов и внедрению глубокой аналитики в реальном времени.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 2: Typical Requests -->
+          <div class="client-box accent-tint">
+            <h3 class="flex items-center gap-2 text-accent">
+              <span>💬</span> С какими запросами к нам приходят:
+            </h3>
+
+            <div class="client-item">
+              <div class="client-item-icon query-icon">“</div>
+              <p class="text-sm font-semibold text-[#0F172A]">
+                «Хотим выстроить предсказуемый и регулярный поток квалифицированных лидов и закрытых сделок».
+              </p>
+            </div>
+
+            <div class="client-item">
+              <div class="client-item-icon query-icon">“</div>
+              <p class="text-sm font-semibold text-[#0F172A]">
+                «Нужно систематизировать хаос в коммерческом отделе и навести железный порядок в воронке продаж».
+              </p>
+            </div>
+
+            <div class="client-item">
+              <div class="client-item-icon query-icon">“</div>
+              <p class="text-sm font-semibold text-[#0F172A]">
+                «Собственник хочет выйти из рутины и управлять бизнесом на основе твердых цифр, а не интуиции».
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- СЛАЙД 8: С кем мы точно НЕ работаем -->
+    <section class="slide" id="slide-8" aria-labelledby="slide8-heading">
+      <div class="container">
+        <div class="center">
+          <div class="badge danger animate-up">Этика и фильтр проектов</div>
+          <h2 id="slide8-heading" class="animate-up" style="transition-delay: 0.1s;">
+            Анти-клиент
+          </h2>
+          <p class="subtitle center animate-up" style="transition-delay: 0.15s;">
+            Мы ценим своё и ваше время, поэтому открыто заявляем, за какие сферы и форматы мы категорически не берёмся:
+          </p>
+        </div>
+
+        <div class="grid-4 animate-up" style="transition-delay: 0.25s;">
+          <!-- Anti 1 -->
+          <div class="anti-card">
+            <h4><span class="font-mono">✕</span> Микро-ритейл</h4>
+            <p>Продуктовые магазины у дома с оборотом до 10 млн/мес. В таком формате затраты на сквозную коммерческую архитектуру не окупаются юнит-экономикой.</p>
+          </div>
+
+          <!-- Anti 2 -->
+          <div class="anti-card">
+            <h4><span class="font-mono">✕</span> Инфобизнес</h4>
+            <p>Онлайн-курсы, инфоцыганские запуски и псевдо-наставничество. Мы работаем исключительно с продуктами и услугами реального сектора.</p>
+          </div>
+
+          <!-- Anti 3 -->
+          <div class="anti-card">
+            <h4><span class="font-mono">✕</span> Казино &amp; Гемблинг</h4>
+            <p>Серые схемы, ставки на спорт, казино, лотереи и пирамиды. Категорически противоречит принципам честного партнерства и совести.</p>
+          </div>
+
+          <!-- Anti 4 -->
+          <div class="anti-card">
+            <h4><span class="font-mono">✕</span> P2P-Арбитраж</h4>
+            <p>Крипто-арбитраж, перегоны валюты и спекулятивные темы. Наша специализация — системная коммерция вокруг ценного рыночного продукта.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- СЛАЙД 9: Дорожная карта (Roadmap) -->
+    <section class="slide" id="slide-9" aria-labelledby="slide9-heading">
+      <div class="container">
+        <div class="center">
+          <div class="badge accent animate-up">Регламент и сроки</div>
+          <h2 id="slide9-heading" class="animate-up" style="transition-delay: 0.1s;">
+            Как мы работаем (Roadmap)
+          </h2>
+          <p class="subtitle center animate-up" style="transition-delay: 0.15s;">
+            Срок полного цикла: <strong>3 месяца</strong>. Четкое разделение на аудит, архитектуру и боевое внедрение.
+          </p>
+        </div>
+
+        <div class="roadmap-timeline animate-up" style="transition-delay: 0.25s;">
+          <!-- Month 1 -->
+          <div class="roadmap-card">
+            <span class="month-badge">Месяц 1 &bull; Архитектура</span>
+            <h3>Аудит и стратегия</h3>
+            <p class="text-sm text-muted mb-4">Глубокое погружение в бизнес-модель, оцифровка текущих сливов и подготовка базы:</p>
+            
+            <ul class="feature-check-list">
+              <li><span class="bullet">+</span> Глубокий аудит рекламы, прослушка звонков и анализ CRM.</li>
+              <li><span class="bullet">+</span> Разработка конверсионных рекламных материалов и креативов.</li>
+              <li><span class="bullet">+</span> Написание скриптов продаж, регламентов и книги продукта.</li>
+              <li><span class="bullet">+</span> Формирование детального ТЗ на найм и утверждение стратегии с собственником.</li>
+            </ul>
+          </div>
+
+          <!-- Month 2-3 -->
+          <div class="roadmap-card highlight">
+            <span class="month-badge">Месяцы 2–3 &bull; Запуск &amp; KPI</span>
+            <h3>Внедрение и корректировки</h3>
+            <p class="text-sm text-secondary mb-4">Формирование боевой команды, вывод трафика на целевую окупаемость и закрепление KPI:</p>
+
+            <ul class="feature-check-list">
+              <li><span class="bullet">+</span> Найм, отбор и боевая аттестация сотрудников отдела продаж.</li>
+              <li><span class="bullet">+</span> Запуск, аналитика и непрерывная корректировка рекламных кампаний.</li>
+              <li><span class="bullet">+</span> Обучение команды техникам дожима и ведению клиентов в CRM.</li>
+              <li><span class="bullet">+</span> Вывод коммерческого отдела на заданные целевые KPI по выручке.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- СЛАЙД 10: Артефакты (Что останется у вас) -->
+    <section class="slide" id="slide-10" aria-labelledby="slide10-heading">
+      <div class="container">
+        <div class="center">
+          <div class="badge success animate-up">Материальные активы</div>
+          <h2 id="slide10-heading" class="animate-up" style="transition-delay: 0.1s;">
+            Что физически останется в вашей компании
+          </h2>
+          <p class="subtitle center animate-up" style="transition-delay: 0.15s;">
+            Мы не завязываем все процессы на себе. После завершения нашей работы в формате «под ключ» в вашем бизнесе остаются:
+          </p>
+        </div>
+
+        <div class="artifacts-grid animate-up" style="transition-delay: 0.25s;">
+          <div class="artifact-card">
+            <span class="artifact-num">#01</span>
+            <h4>Сформированная и обученная команда</h4>
+            <p class="text-xs text-muted">Менеджеры и РОП, знающие как продавать именно ваш продукт.</p>
+          </div>
+
+          <div class="artifact-card">
+            <span class="artifact-num">#02</span>
+            <h4>Регламенты и система адаптации</h4>
+            <p class="text-xs text-muted">Методология быстрого ввода новичков в строй без потери качества.</p>
+          </div>
+
+          <div class="artifact-card">
+            <span class="artifact-num">#03</span>
+            <h4>Настроенные рекламные кабинеты</h4>
+            <p class="text-xs text-muted">Работающие связки в Директе, таргете и посевах с правом собственности.</p>
+          </div>
+
+          <div class="artifact-card">
+            <span class="artifact-num">#04</span>
+            <h4>Внедрённая CRM-система</h4>
+            <p class="text-xs text-muted">Оцифрованные этапы воронки, автозадачи и исключение человеческого фактора.</p>
+          </div>
+
+          <div class="artifact-card">
+            <span class="artifact-num">#05</span>
+            <h4>Готовые скрипты продаж</h4>
+            <p class="text-xs text-muted">Сценарии обработки возражений, квалификации и закрытия сделок.</p>
+          </div>
+
+          <div class="artifact-card">
+            <span class="artifact-num">#06</span>
+            <h4>Дашборды в системах аналитики</h4>
+            <p class="text-xs text-muted">Ключевые цифры компании (CAC, CPL, ROMI, выручка) как на ладони.</p>
+          </div>
+
+          <div class="artifact-card">
+            <span class="artifact-num">#07</span>
+            <h4>Долгосрочная стратегия развития</h4>
+            <p class="text-xs text-muted">Дорожная карта масштабирования компании на следующие 1–3 года.</p>
+          </div>
+
+          <div class="artifact-card">
+            <span class="artifact-num">#08</span>
+            <h4>Все сайты, презентации и брендбуки</h4>
+            <p class="text-xs text-muted">Все созданные материалы, дизайн-системы и исходники для подрядчиков.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- СЛАЙД 11: Инвестиции в рост (Тарифы) -->
+    <section class="slide" id="slide-11" aria-labelledby="slide11-heading">
+      <div class="container">
+        <div class="center">
+          <div class="badge accent animate-up">Прозрачные условия</div>
+          <h2 id="slide11-heading" class="animate-up" style="transition-delay: 0.1s;">
+            Тарифы и форматы сотрудничества
+          </h2>
+          <p class="subtitle center animate-up" style="transition-delay: 0.15s;">
+            Инвестиции в построение системы, которая окупается ростом маржинальности:
+          </p>
+        </div>
+
+        <div class="tariffs-grid animate-up" style="transition-delay: 0.25s;">
+          <!-- Tariff 1 -->
+          <div class="tariff-col">
+            <div>
+              <span class="badge">Формат 1</span>
+              <h3 class="mt-2 text-xl">«Стратегия и тактика»</h3>
+              <div class="text-xs text-muted">Аудит и дорожная карта</div>
+              
+              <div class="tariff-price">от 90 000 ₽</div>
+              <div class="tariff-subprice">Разовый детальный аудит</div>
+
+              <p class="text-sm text-secondary mb-4">Глубокий разбор бизнеса, разработка Roadmap, маркетинговой стратегии и ТЗ на найм. Клиент внедряет всё самостоятельно своими руками.</p>
+
+              <ul class="feature-check-list text-xs">
+                <li><span class="bullet">+</span> Полная диагностика связки «трафик + продажи».</li>
+                <li><span class="bullet">+</span> Анализ звонков и оцифровка сливов конверсии.</li>
+                <li><span class="bullet">+</span> Пошаговый план самостоятельного внедрения.</li>
+              </ul>
+            </div>
+
+            <a href="#slide-12" class="pp-btn pp-btn-secondary w-full mt-6" data-jump="contact">
+              Выбрать аудит
+            </a>
+          </div>
+
+          <!-- Tariff 2 (Flagship) -->
+          <div class="tariff-col flagship">
+            <div class="tariff-pill">Флагманский формат</div>
+            <div>
+              <span class="badge accent">Формат 2 &bull; ХИТ</span>
+              <h3 class="mt-2 text-xl text-accent">«Коммерческий отдел под ключ»</h3>
+              <div class="text-xs text-accent font-semibold">Полный цикл внедрения</div>
+              
+              <div class="tariff-price">600 000 – 1 200 000 ₽</div>
+              <div class="tariff-subprice">Оплата за весь цикл 3 месяца (не в месяц!)</div>
+
+              <p class="text-sm text-secondary mb-4">Полное внедрение: найм команды, настройка CRM, сборка воронок, скрипты, запуск рекламы, вывод отдела продаж на плановые KPI.</p>
+
+              <ul class="feature-check-list text-xs">
+                <li><span class="bullet">+</span> Личное участие Сергея и Мурада в процессах.</li>
+                <li><span class="bullet">+</span> Найм и обучение РОПа и менеджеров продаж.</li>
+                <li><span class="bullet">+</span> Настройка и оптимизация performance-рекламы.</li>
+                <li><span class="bullet">+</span> Передача всех 8 материальных артефактов.</li>
+              </ul>
+            </div>
+
+            <a href="#slide-12" class="pp-btn pp-btn-primary w-full mt-6" data-jump="contact">
+              Обсудить запуск под ключ ➔
+            </a>
+          </div>
+
+          <!-- Tariff 3 -->
+          <div class="tariff-col">
+            <div>
+              <span class="badge navy">Формат 3</span>
+              <h3 class="mt-2 text-xl">«Внешний совет директоров»</h3>
+              <div class="text-xs text-muted">Сопровождение и масштаб</div>
+              
+              <div class="tariff-price">от 250 000 ₽ / мес</div>
+              <div class="tariff-subprice">+ % от подтвержденного прироста выручки</div>
+
+              <p class="text-sm text-secondary mb-4">Мурад и Сергей остаются в вашем бизнесе как внешние CMO (директор по маркетингу) и HRBP (бизнес-партнер по персоналу), постоянно управляя ростом компании и оптимизируя процессы.</p>
+
+              <ul class="feature-check-list text-xs">
+                <li><span class="bullet">+</span> Еженедельный трекинг и контроль метрик.</li>
+                <li><span class="bullet">+</span> Управление подрядчиками и развитием людей.</li>
+                <li><span class="bullet">+</span> Совместное масштабирование чистой прибыли.</li>
+              </ul>
+            </div>
+
+            <a href="#slide-12" class="pp-btn pp-btn-secondary w-full mt-6" data-jump="contact">
+              Выбрать сопровождение
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- СЛАЙД 12: Следующий шаг (Диагностика и Контакты) -->
+    <section class="slide" id="slide-12" aria-labelledby="slide12-heading">
+      <div class="container">
+        <div class="center">
+          <div class="badge accent animate-up">Сделайте первый шаг</div>
+          <h2 id="slide12-heading" class="animate-up" style="transition-delay: 0.1s;">
+            Узнайте, какой потенциал скрыт в вашем бизнесе
+          </h2>
+          <p class="subtitle center animate-up" style="transition-delay: 0.15s;">
+            Запишитесь на <strong>бесплатную экспресс Zoom-диагностику (45 минут)</strong>. Мы разберем вашу текущую ситуацию, боли и запрос, и дадим первичный план действий.
+          </p>
+        </div>
+
+        <div class="contact-container animate-up" style="transition-delay: 0.25s;">
+          <!-- Lead Form -->
+          <div class="lead-form-card">
+            <h3 style="font-size: 1.25rem; margin-bottom: 4px;">Записаться на экспресс-диагностику</h3>
+            <p class="text-xs text-muted mb-4">Заполните поля, и мы свяжемся с вами в течение 2 часов для согласования слота:</p>
+
+            <form id="auditForm">
+              <div class="form-group">
+                <label for="clientName" class="form-label">Ваше имя *</label>
+                <input type="text" id="clientName" class="form-input" placeholder="Например, Александр" required>
+              </div>
+
+              <div class="form-group">
+                <label for="clientContact" class="form-label">Номер телефона / Telegram / MAX *</label>
+                <input type="text" id="clientContact" class="form-input" placeholder="+7 (999) 000-00-00 или @username" required>
+              </div>
+
+              <div class="form-group">
+                <label for="clientNiche" class="form-label">Ниша и краткое описание задачи</label>
+                <input type="text" id="clientNiche" class="form-input" placeholder="Девелопмент, B2B производство, услуги...">
+              </div>
+
+              <button type="submit" class="pp-btn pp-btn-primary w-full mt-2" style="width: 100%;">
+                Записаться на диагностику (45 минут) ➔
+              </button>
+            </form>
+
+            <div id="formSuccessBox" style="display: none; padding: 20px; background: #ECFDF5; border: 1px solid #BBF7D0; border-radius: 12px; text-align: center;">
+              <div style="font-size: 28px; margin-bottom: 6px;">🎉</div>
+              <h4 style="color: #15803D; font-size: 16px; margin-bottom: 4px;">Заявка сформирована!</h4>
+              <p style="font-size: 13px; color: #166534; margin-bottom: 12px;">Вы можете сразу перейти в диалог с Сергеем в Telegram с готовым текстом:</p>
+              <a href="#" class="tg-direct-link pp-btn pp-btn-primary" target="_blank" style="padding: 10px 20px; font-size: 13px;">
+                Открыть диалог в Telegram ➔
+              </a>
+            </div>
+          </div>
+
+          <!-- Direct Contact Card -->
+          <div class="direct-contact-card">
+            <div>
+              <div class="text-xs uppercase font-mono font-bold" style="color: var(--pp-accent-light);">Прямой контакт</div>
+              <h3 class="mt-1">Сергей Денежкин</h3>
+              <p class="text-xs text-muted" style="color: #94A3B8;">Руководитель коммерческих направлений, партнер бюро</p>
+            </div>
+
+            <div class="contact-person">
+              <div class="contact-avatar">
+                <img src="assets/Sergey_Denezhkin.jpg" alt="Сергей Денежкин">
+              </div>
+              <div>
+                <a href="tel:+79319647260" class="contact-link-row">
+                  <span>📞 +7 (931) 964-72-60</span>
+                </a>
+                <a href="https://t.me/denezhkin_serge" target="_blank" class="contact-link-row mt-1">
+                  <span>✈️ Telegram: @denezhkin_serge</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- QR Code Card -->
+            <div class="contact-qr-wrap">
+              <img src="assets/qr_denezhkin_serge.png" alt="QR-код Telegram Сергея Денежкина">
+              <div class="contact-qr-text">
+                Сканируйте камерой смартфона для быстрого перехода в чат Telegram
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Presentation Script -->
+  <script src="app.js"></script>
+</body>
+</html>

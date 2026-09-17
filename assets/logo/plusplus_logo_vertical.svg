@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 180" width="220" height="180" fill="none">
+  <defs>
+    <linearGradient id="v_terraGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E06D3B" />
+      <stop offset="100%" stop-color="#C25E34" />
+    </linearGradient>
+    <linearGradient id="v_navyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+    <filter id="v_softShadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0F172A" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <!-- Centered Icon -->
+  <g transform="translate(76, 12)">
+    <rect x="2" y="2" width="64" height="64" rx="18" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5" filter="url(#v_softShadow)"/>
+    <path d="M2 34h64M34 2v64" stroke="#F8FAFC" stroke-width="1" stroke-dasharray="2 2"/>
+    <rect x="18" y="24" width="6.5" height="24" rx="3.25" fill="url(#v_navyGrad)" />
+    <rect x="9.5" y="32.5" width="24" height="6.5" rx="3.25" fill="url(#v_navyGrad)" />
+    <rect x="43.5" y="11.5" width="6.5" height="24" rx="3.25" fill="url(#v_terraGrad)" />
+    <rect x="35" y="20" width="24" height="6.5" rx="3.25" fill="url(#v_terraGrad)" />
+    <circle cx="34" cy="34" r="2.8" fill="#C25E34" />
+  </g>
+
+  <!-- Typography -->
+  <text x="110" y="118" text-anchor="middle" font-family="'Plus Jakarta Sans', 'Manrope', -apple-system, sans-serif" font-size="28" font-weight="800" fill="#0F172A" letter-spacing="-0.5">Plus<tspan fill="#C25E34">Plus</tspan></text>
+  <text x="110" y="137" text-anchor="middle" font-family="'Plus Jakarta Sans', 'Manrope', -apple-system, sans-serif" font-size="9" font-weight="600" fill="#64748B" letter-spacing="2.4">COMMERCIAL ARCHITECTURE</text>
+  <text x="110" y="152" text-anchor="middle" font-family="'Plus Jakarta Sans', 'Manrope', -apple-system, sans-serif" font-size="8" font-weight="500" fill="#94A3B8" letter-spacing="1">СЕРГЕЙ ДЕНЕЖКИН &amp; МУРАД ЯЛИЕВ</text>
+</svg>

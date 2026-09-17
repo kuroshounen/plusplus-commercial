@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none">
+  <defs>
+    <linearGradient id="terraGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D97706" />
+      <stop offset="100%" stop-color="#C25E34" />
+    </linearGradient>
+    <linearGradient id="navyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0F172A" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+  
+  <!-- Base Squircle Container -->
+  <rect x="2" y="2" width="60" height="60" rx="16" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5" filter="url(#softShadow)"/>
+  
+  <!-- Subtle Blueprint Grid Hint -->
+  <path d="M2 32h60M32 2v60" stroke="#F1F5F9" stroke-width="1" stroke-dasharray="2 2"/>
+  
+  <!-- First Plus (Marketing / Base / Foundation) -->
+  <g fill="url(#navyGrad)">
+    <rect x="17" y="23" width="6" height="22" rx="3" />
+    <rect x="9" y="31" width="22" height="6" rx="3" />
+  </g>
+  
+  <!-- Ascending Second Plus (Sales / Growth / Scaled Profit) -->
+  <g fill="url(#terraGrad)">
+    <rect x="41" y="11" width="6" height="22" rx="3" />
+    <rect x="33" y="19" width="22" height="6" rx="3" />
+  </g>
+  
+  <!-- Synergy Bridge Node (Micro pulse linking both) -->
+  <circle cx="32" cy="32" r="2.5" fill="#D97706" opacity="0.9" />
+</svg>

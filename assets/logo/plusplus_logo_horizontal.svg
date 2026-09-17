@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 64" width="340" height="64" fill="none">
+  <defs>
+    <linearGradient id="h_terraGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E06D3B" />
+      <stop offset="100%" stop-color="#C25E34" />
+    </linearGradient>
+    <linearGradient id="h_navyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+    <filter id="h_softShadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="1.5" stdDeviation="2.5" flood-color="#0F172A" flood-opacity="0.06"/>
+    </filter>
+  </defs>
+
+  <!-- Logomark Icon (Left) -->
+  <g transform="translate(0, 0)">
+    <rect x="2" y="2" width="60" height="60" rx="16" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5" filter="url(#h_softShadow)"/>
+    <path d="M2 32h60M32 2v60" stroke="#F8FAFC" stroke-width="1" stroke-dasharray="2 2"/>
+    <!-- Plus 1: Navy -->
+    <rect x="17" y="23" width="6" height="22" rx="3" fill="url(#h_navyGrad)" />
+    <rect x="9" y="31" width="22" height="6" rx="3" fill="url(#h_navyGrad)" />
+    <!-- Plus 2: Terracotta -->
+    <rect x="41" y="11" width="6" height="22" rx="3" fill="url(#h_terraGrad)" />
+    <rect x="33" y="19" width="22" height="6" rx="3" fill="url(#h_terraGrad)" />
+    <!-- Center Node -->
+    <circle cx="32" cy="32" r="2.5" fill="#C25E34" opacity="0.9" />
+  </g>
+
+  <!-- Typography (Right) -->
+  <g transform="translate(78, 0)">
+    <!-- Brand Wordmark -->
+    <text x="0" y="33" font-family="'Plus Jakarta Sans', 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif" font-size="27" font-weight="800" fill="#0F172A" letter-spacing="-0.5">Plus<tspan fill="#C25E34">Plus</tspan></text>
+    
+    <!-- Status / Accent Dot -->
+    <circle cx="134" cy="20" r="3.5" fill="#C25E34" />
+
+    <!-- Subtitle / Descriptor -->
+    <text x="0" y="49" font-family="'Plus Jakarta Sans', 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif" font-size="9.5" font-weight="600" fill="#64748B" letter-spacing="2.2">COMMERCIAL ARCHITECTURE</text>
+    
+    <!-- Partner Signature Microline -->
+    <text x="0" y="60" font-family="'Plus Jakarta Sans', 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7.5" font-weight="500" fill="#94A3B8" letter-spacing="0.8">ДЕНЕЖКИН &amp; ЯЛИЕВ</text>
+  </g>
+</svg>
